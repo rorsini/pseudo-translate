@@ -4,7 +4,7 @@
   "description": "Pseudo-translates a directory of JSON while preserving variable interpolation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/rorsini/pseudo-translate-json/issues"
   },
-  "homepage": "https://github.com/rorsini/pseudo-translate-json#readme"
+  "homepage": "https://github.com/rorsini/pseudo-translate-json#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "jsonfile": "^6.0.1",
+    "mocha": "^7.1.2"
+  }
 }
