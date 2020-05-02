@@ -1,32 +1,37 @@
 const jsonfile = require('jsonfile')
 
 const CHARS = {
-  'a': 'ä',
-  'c': 'ç',
-  'i': 'ï',
-  'C': 'Ç',
-  'A': 'Ä',
-  'e': 'é',
-  'E': 'É',
-  'D': 'Ð',
-  'o': 'ö',
-  'O': 'Ö',
-  'u': 'ü',
-  'U': 'Ü',
-  'n': 'ñ',
-  'r': 'ř',
-  'Y': 'Ý',
-  'w': 'ω',
-  'N': 'Ñ'
+  'a':'ä', 'c':'ç', 'i':'ï', 'C':'Ç',
+  'A':'Ä', 'e':'é', 'E':'É', 'D':'Ð',
+  'o':'ö', 'O':'Ö', 'u':'ü', 'U':'Ü',
+  'n':'ñ', 'r':'ř', 'Y':'Ý', 'w':'ω',
+  'N':'Ñ'
 }
 
 const _replaceChars = (str) => {
-  let ptStr = str;
+  let retval = str;
   for (key in CHARS) {
-    const re = new RegExp(key, "g");
-    ptStr = ptStr.replace(re, CHARS[key]);
+    retval = retval.replace(
+      RegExp(key, "g"),
+      CHARS[key]
+    );
   }
-  return ptStr;
+  return retval;
+};
+
+const _processValue = (str) => {
+  const words = str.split(/ +/g);
+  let newWords = [];
+  for (word in words) {
+    const thisWord = words[word];
+    const re = new RegExp(/{{.*}}/);
+    if ( re.test(thisWord) ) {
+      newWords.push(thisWord);
+    } else {
+      newWords.push(_replaceChars(thisWord));
+    }
+  }
+  return newWords.join(' ');
 };
 
 const _wrapSentence = (str) => {
@@ -41,7 +46,7 @@ const pseudoTranslateObject = (obj) => {
     }
     return retObj;
   } else if ( typeof obj === "string" ) {
-    const val = _wrapSentence(_replaceChars(obj));
+    const val = _wrapSentence(_processValue(obj));
     return val;
   }
 };
