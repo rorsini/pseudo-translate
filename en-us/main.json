@@ -1,0 +1,6 @@
+{
+    "EMAIL_PROMPT": "Please enter your email address.",
+    "USER": {
+        "WELCOME": "Welcome {{USER}}, please have a look around!"
+    }
+}
