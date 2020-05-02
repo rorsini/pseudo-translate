@@ -4,7 +4,9 @@
   "description": "Pseudo-translates a directory of JSON while preserving variable interpolation",
   "main": "index.js",
   "scripts": {
-    "test": "npx mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "test:watch": "mocha --reporter spec --watch ./test ./",
+    "test:coverage": "nyc mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "jsonfile": "^6.0.1",
-    "mocha": "^7.1.2"
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1"
   }
 }

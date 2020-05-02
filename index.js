@@ -9,14 +9,13 @@ const CHARS = {
 }
 
 const _replaceChars = (str) => {
-  let retval = str;
   for (key in CHARS) {
-    retval = retval.replace(
+    str = str.replace(
       RegExp(key, "g"),
       CHARS[key]
     );
   }
-  return retval;
+  return str;
 };
 
 const _processValue = (str) => {
@@ -38,11 +37,11 @@ const _wrapSentence = (str) => {
   return `«${str}»`;
 };
 
-const pseudoTranslateObject = (obj) => {
+const pseudoTranslate = (obj) => {
   if ( typeof obj === "object" ) {
     let retObj = {};
     for (key in obj) {
-      retObj[key] = pseudoTranslateObject(obj[key]);
+      retObj[key] = pseudoTranslate(obj[key]);
     }
     return retObj;
   } else if ( typeof obj === "string" ) {
@@ -51,11 +50,10 @@ const pseudoTranslateObject = (obj) => {
   }
 };
 
-const fileName = "./en-us/main.json";
+const fileName = "./test/fixtures/en-us/main.json";
 const enu_json = jsonfile.readFileSync(fileName);
-console.log(enu_json);
-const pt_obj = pseudoTranslateObject(enu_json);
-console.log(pt_obj);
+const pt_obj = pseudoTranslate(enu_json);
 
 // jsonfile.writeFileSync(fileName, content, { spaces: 2 })
 
+exports.pseudoTranslate = pseudoTranslate;
