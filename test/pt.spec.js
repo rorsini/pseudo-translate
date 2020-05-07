@@ -28,26 +28,6 @@ describe("Pseudo-Translate JSON:", function() {
     it("can translate a JSON object with interpolation", function() {
         const enu_obj = {
             USER: {
-                WELCOME: 'Welcome {{USER}}, please have a look around!'
-            }
-        };
-        const pt_obj = pseudoTranslate(enu_obj);
-        expect(pt_obj).to.deep.equal({
-            USER: {
-                WELCOME: '«Wélçömé {{USER}}, pléäsé hävé ä löök äřöüñd!»'
-            }
-        });
-    });
-
-    it("can handle multiple interpolation variables", function() {
-        const enu_obj = 'Welcome {{USER}}, please click {{HERE}}';
-        const pt_obj = pseudoTranslate(enu_obj);
-        expect(pt_obj).to.deep.equal('«Wélçömé {{USER}}, pléäsé çlïçk {{HERE}}»');
-    });
-
-    it.skip("can handle interpolation with whitespace", function() {
-        const enu_obj = {
-            USER: {
                 WELCOME: 'Welcome {{ USER }}, please have a look around!'
             }
         };
@@ -59,6 +39,29 @@ describe("Pseudo-Translate JSON:", function() {
         });
     });
 
+    it("can handle multiple interpolation variables", function() {
+        const enu_obj = 'Welcome {{ USER }}, please click {{ HERE }}';
+        const pt_obj = pseudoTranslate(enu_obj);
+        expect(pt_obj).to.deep.equal('«Wélçömé {{ USER }}, pléäsé çlïçk {{ HERE }}»');
+    });
+
+    it("can handle interpolation with and without whitespace", function() {
+        const enu_obj = {
+            USER: {
+                WELCOME: 'Welcome {{ USER }}, please click {{HERE}}'
+            }
+        };
+        const pt_obj = pseudoTranslate(enu_obj);
+        expect(pt_obj).to.deep.equal({
+            USER: {
+                WELCOME: '«Wélçömé {{ USER }}, pléäsé çlïçk {{HERE}}»'
+            }
+        });
+    });
+
     it.skip("can translate a directory of JSON files", function() {
+    });
+
+    it.skip("can handle a pluralization array", function() {
     });
 });

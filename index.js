@@ -1,54 +1,56 @@
-const jsonfile = require('jsonfile')
+const jsonfile = require('jsonfile');
 
 const CHARS = {
-  'a':'ä', 'c':'ç', 'i':'ï', 'C':'Ç',
-  'A':'Ä', 'e':'é', 'E':'É', 'D':'Ð',
-  'o':'ö', 'O':'Ö', 'u':'ü', 'U':'Ü',
-  'n':'ñ', 'r':'ř', 'Y':'Ý', 'w':'ω',
-  'N':'Ñ'
+    'a':'ä', 'c':'ç', 'i':'ï', 'C':'Ç',
+    'A':'Ä', 'e':'é', 'E':'É', 'D':'Ð',
+    'o':'ö', 'O':'Ö', 'u':'ü', 'U':'Ü',
+    'n':'ñ', 'r':'ř', 'Y':'Ý', 'w':'ω',
+    'N':'Ñ'
 }
 
 const _replaceChars = (str) => {
-  for (key in CHARS) {
-    str = str.replace(
-      RegExp(key, "g"),
-      CHARS[key]
-    );
-  }
-  return str;
+    for (key in CHARS) {
+        str = str.replace(
+            RegExp(key, "g"),
+            CHARS[key]
+        );
+    }
+    return str;
 };
 
 const _processValue = (str) => {
-  const words = str.split(/ +/g);
-  let newWords = [];
-  for (word in words) {
-    const thisWord = words[word];
-    const re = new RegExp(/{{.*}}/);
-    if ( re.test(thisWord) ) {
-      newWords.push(thisWord);
-    } else {
-      newWords.push(_replaceChars(thisWord));
+    const words = str.replace(/({{)\s+(\S+)\s+(}})/g, "$1﹏$2﹏$3").split(/ +/g);
+    let newWords = [];
+    for (word in words) {
+        const thisWord = words[word];
+        const re = new RegExp(/{{.*}}/);
+        if ( re.test(thisWord) ) {
+            const repairSpace = thisWord.replace(/﹏/g, ' ');
+            newWords.push(repairSpace);
+        } else {
+            newWords.push(_replaceChars(thisWord));
+        }
     }
-  }
-  return newWords.join(' ');
+    return newWords.join(' ');
 };
 
 const _wrapSentence = (str) => {
-  return `«${str}»`;
+    return `«${str}»`;
 };
 
 const pseudoTranslate = (obj) => {
-  if ( typeof obj === "object" ) {
-    let retObj = {};
-    for (key in obj) {
-      retObj[key] = pseudoTranslate(obj[key]);
+    if ( typeof obj === "object" ) {
+        let retObj = {};
+        for (key in obj) {
+            retObj[key] = pseudoTranslate(obj[key]);
+        }
+        return retObj;
+    } else if ( typeof obj === "string" ) {
+        const val = _wrapSentence(_processValue(obj));
+        return val;
     }
-    return retObj;
-  } else if ( typeof obj === "string" ) {
-    const val = _wrapSentence(_processValue(obj));
-    return val;
-  }
 };
+
 
 const fileName = "./test/fixtures/en-us/main.json";
 const enu_json = jsonfile.readFileSync(fileName);
