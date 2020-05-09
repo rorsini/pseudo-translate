@@ -1,17 +1,16 @@
-
 var expect = require("chai").expect;
 const jsonfile = require('jsonfile')
-var { pseudoTranslate } = require("../index.js");
+var { ptify } = require("../index.js");
 
-const fileName = "./test/fixtures/en-us/main.json";
-const enu_json = jsonfile.readFileSync(fileName);
+const fixture = "./test/fixtures/en-us/main.json";
+const enu_json = jsonfile.readFileSync(fixture);
 
-//console.log(pseudoTranslate);
+//console.log(ptify.ptobj);
 
 describe("Pseudo-Translate JSON:", function() {
     it("can translate a string", function() {
         const enu_obj = 'Please enter your email address.';
-        const pt_obj = pseudoTranslate(enu_obj);
+        const pt_obj = ptify.ptobj(enu_obj);
         expect(pt_obj).to.deep.equal('«Pléäsé éñtéř yöüř émäïl äddřéss.»');
     });
 
@@ -19,7 +18,7 @@ describe("Pseudo-Translate JSON:", function() {
         const enu_obj = {
             EMAIL_PROMPT: 'Please enter your email address.'
         };
-        const pt_obj = pseudoTranslate(enu_obj);
+        const pt_obj = ptify.ptobj(enu_obj);
         expect(pt_obj).to.deep.equal({
             EMAIL_PROMPT: '«Pléäsé éñtéř yöüř émäïl äddřéss.»'
         });
@@ -31,7 +30,7 @@ describe("Pseudo-Translate JSON:", function() {
                 WELCOME: 'Welcome {{ USER }}, please have a look around!'
             }
         };
-        const pt_obj = pseudoTranslate(enu_obj);
+        const pt_obj = ptify.ptobj(enu_obj);
         expect(pt_obj).to.deep.equal({
             USER: {
                 WELCOME: '«Wélçömé {{ USER }}, pléäsé hävé ä löök äřöüñd!»'
@@ -41,7 +40,7 @@ describe("Pseudo-Translate JSON:", function() {
 
     it("can handle multiple interpolation variables", function() {
         const enu_obj = 'Welcome {{ USER }}, please click {{ HERE }}';
-        const pt_obj = pseudoTranslate(enu_obj);
+        const pt_obj = ptify.ptobj(enu_obj);
         expect(pt_obj).to.deep.equal('«Wélçömé {{ USER }}, pléäsé çlïçk {{ HERE }}»');
     });
 
@@ -51,7 +50,7 @@ describe("Pseudo-Translate JSON:", function() {
                 WELCOME: 'Welcome {{ USER }}, please click {{HERE}}'
             }
         };
-        const pt_obj = pseudoTranslate(enu_obj);
+        const pt_obj = ptify.ptobj(enu_obj);
         expect(pt_obj).to.deep.equal({
             USER: {
                 WELCOME: '«Wélçömé {{ USER }}, pléäsé çlïçk {{HERE}}»'
