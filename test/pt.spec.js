@@ -1,9 +1,9 @@
 var expect = require("chai").expect;
-const jsonfile = require('jsonfile')
+
 var { ptify } = require("../index");
 
 const fixture = "./test/fixtures/en-us/main.json";
-const enu_json = jsonfile.readFileSync(fixture);
+const enu_json = ptify.load_json(fixture);
 
 describe("Pseudo-Translate JSON:", function() {
     it("can translate a string", function() {
