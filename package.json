@@ -1,13 +1,7 @@
 {
-  "name": "pseudo-translatify",
+  "name": "pseudo-translatify-2",
   "version": "1.0.0",
-  "description": "Pseudo-translates a directory of i18n resources while preserving variable interpolation",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha --reporter spec",
-    "test:watch": "mocha --reporter spec --watch ./test ./",
-    "test:coverage": "nyc mocha --reporter spec"
-  },
+  "description": "Pseudo-translates i18n resources",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rorsini/pseudo-translatify.git"
@@ -18,13 +12,30 @@
     "url": "https://github.com/rorsini/pseudo-translatify/issues"
   },
   "homepage": "https://github.com/rorsini/pseudo-translatify#readme",
+  "main": "dist/pseudo-translatify.cjs.js",
+  "module": "dist/pseudo-translatify.esm.js",
+  "browser": "dist/pseudo-translatify.umd.js",
   "dependencies": {
+    "fs": "0.0.1-security",
+    "jsonfile": "^6.0.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0",
     "chai": "^4.2.0",
-    "jsonfile": "^6.0.1",
     "mocha": "^7.1.2",
     "nyc": "^15.0.1"
   },
-  "devDependencies": {
-    "rollup-plugin-node-builtins": "^2.1.2"
-  }
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "mocha --reporter spec",
+    "test:watch": "mocha --reporter spec --watch ./test ./",
+    "test:coverage": "nyc mocha --reporter spec",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ]
 }

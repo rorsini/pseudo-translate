@@ -1,14 +1,12 @@
 var expect = require("chai").expect;
 
-var { ptify } = require("../index");
+var ptify = require("..");
 
-const fixture = "./test/fixtures/en-us/main.json";
-const enu_json = ptify.load_json(fixture);
 
 describe("Pseudo-Translate JSON:", function() {
     it("can translate a string", function() {
         const enu_obj = 'Please enter your email address.';
-        const pt_obj = ptify.ptobj(enu_obj);
+        const pt_obj = ptify(enu_obj);
         expect(pt_obj).to.deep.equal('«Pléäsé éñtéř yöüř émäïl äddřéss.»');
     });
 
@@ -16,7 +14,7 @@ describe("Pseudo-Translate JSON:", function() {
         const enu_obj = {
             EMAIL_PROMPT: 'Please enter your email address.'
         };
-        const pt_obj = ptify.ptobj(enu_obj);
+        const pt_obj = ptify(enu_obj);
         expect(pt_obj).to.deep.equal({
             EMAIL_PROMPT: '«Pléäsé éñtéř yöüř émäïl äddřéss.»'
         });
@@ -28,7 +26,7 @@ describe("Pseudo-Translate JSON:", function() {
                 WELCOME: 'Welcome {{ USER }}, please have a look around!'
             }
         };
-        const pt_obj = ptify.ptobj(enu_obj);
+        const pt_obj = ptify(enu_obj);
         expect(pt_obj).to.deep.equal({
             USER: {
                 WELCOME: '«Wélçömé {{ USER }}, pléäsé hävé ä löök äřöüñd!»'
@@ -38,7 +36,7 @@ describe("Pseudo-Translate JSON:", function() {
 
     it("can handle multiple interpolation variables", function() {
         const enu_obj = 'Welcome {{ USER }}, please click {{ HERE }}';
-        const pt_obj = ptify.ptobj(enu_obj);
+        const pt_obj = ptify(enu_obj);
         expect(pt_obj).to.deep.equal('«Wélçömé {{ USER }}, pléäsé çlïçk {{ HERE }}»');
     });
 
@@ -48,10 +46,20 @@ describe("Pseudo-Translate JSON:", function() {
                 WELCOME: 'Welcome {{ USER }}, please click {{HERE}}'
             }
         };
-        const pt_obj = ptify.ptobj(enu_obj);
+        const pt_obj = ptify(enu_obj);
         expect(pt_obj).to.deep.equal({
             USER: {
                 WELCOME: '«Wélçömé {{ USER }}, pléäsé çlïçk {{HERE}}»'
+            }
+        });
+    });
+
+    it("can translate a JSON file", function() {
+        const pt_obj = ptify('./test/fixtures/en-us/main.json');
+        expect(pt_obj).to.deep.equal({
+            "EMAIL_PROMPT": "«Pléäsé éñtéř yöüř émäïl äddřéss.»",
+            "USER": {
+                "WELCOME": "«Wélçömé {{USER}}, pléäsé hävé ä löök äřöüñd!»"
             }
         });
     });
