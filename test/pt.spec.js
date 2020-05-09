@@ -1,11 +1,9 @@
 var expect = require("chai").expect;
 const jsonfile = require('jsonfile')
-var { ptify } = require("../index.js");
+var { ptify } = require("../index");
 
 const fixture = "./test/fixtures/en-us/main.json";
 const enu_json = jsonfile.readFileSync(fixture);
-
-//console.log(ptify.ptobj);
 
 describe("Pseudo-Translate JSON:", function() {
     it("can translate a string", function() {
@@ -59,6 +57,7 @@ describe("Pseudo-Translate JSON:", function() {
     });
 
     it.skip("can translate a directory of JSON files", function() {
+        //TODO:  jsonfile.writeFileSync(fileName, content, { spaces: 2 })
     });
 
     it.skip("can handle a pluralization array", function() {
