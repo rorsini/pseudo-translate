@@ -1,4 +1,4 @@
-# Pseudo Translatify → «Pséüdö Třäñslätïfy»
+# :earth_africa: Pseudo Translatify → «Pséüdö Třäñslätïfy» :earth_asia:
 
 Pseudo-translates a directory of JSON while preserving variable interpolation
 
