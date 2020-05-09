@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rorsini/pseudo-translate-json.git"
+    "url": "git+https://github.com/rorsini/pseudo-translatify.git"
   },
   "author": "Rob Orsini <rob@tupleshop.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/rorsini/pseudo-translate-json/issues"
+    "url": "https://github.com/rorsini/pseudo-translatify/issues"
   },
-  "homepage": "https://github.com/rorsini/pseudo-translate-json#readme",
+  "homepage": "https://github.com/rorsini/pseudo-translatify#readme",
   "dependencies": {
     "chai": "^4.2.0",
     "jsonfile": "^6.0.1",
