@@ -1,4 +1,4 @@
-# :earth_africa: pseudo-translate → «pséüdö-třäñsläté» :earth_asia:
+# :earth_africa: pseudo-translate :earth_asia:
 
 A powerful utility to _pseudo-translate_ i18n resources
   → «Ä pöωéřfül ütïlïty tö _pséüdö-třäñsläté_ ï18ñ řésöüřçés»
