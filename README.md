@@ -20,21 +20,21 @@ Then require, and use like this:
 const ptify = require('pseudo-translate');
 
 const obj = {
-  "USERS": {
-    "MSG": "Welcome {{FNAME}} {{LNAME}}, nice to see you!"
-  }
+    "USERS": {
+        "MSG": "Welcome {{FNAME}} {{LNAME}}, nice to see you!"
+    }
 };
 
 const pt = ptify(obj);
 
-
 /*
-pt contains:
-  {
-    USERS: {
-      MSG: '«Wélçömé {{FNAME}} {{LNAME}}, ñïçé tö séé yöü!»'
+  pt contains:
+
+    {
+        "USERS": {
+            "MSG": "«Wélçömé {{FNAME}} {{LNAME}}, ñïçé tö séé yöü!»"
+        }
     }
-  }
 */
 ```
 
@@ -42,9 +42,23 @@ pt contains:
 
 Options include:
 
-* Flexible variable interpolation syntax. `"MESSAGE_1": "Hello {{FIRST_NAME}} {{LAST_NAME}}, welcome in!"`
+* Flexible variable interpolation syntax:
+
+```json
+{
+  "MESSAGE_1": "«Héllö {{FIRST_NAME}} {{LAST_NAME}}, ωélçömé ïñ!»"
+}
+```
 
 * Include Unicode "bookends" by default to identify string concatenation issues.
 
+```json
+{
+    "BUTTON": {
+        "SUBMIT": "«Sübmït»"
+    }
+}
+
+```
 
 
