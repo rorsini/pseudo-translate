@@ -3,6 +3,9 @@
 A powerful utility to _pseudo-translate_ i18n resources
 > → «Ä pöωéřfül ütïlïty tö _pséüdö-třäñsläté_ ï18ñ řésöüřçés»
 
+
+## Build status
+
 [![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
 
 ## Installation
@@ -35,8 +38,7 @@ pt contains:
 */
 ```
 
-
-## Configuration Options
+## Configuration
 
 Options include:
 
