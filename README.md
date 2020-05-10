@@ -1,11 +1,9 @@
-<div align="center">
-  <h1>:earth_africa: pseudo-translate → «pséüdö-třäñsläté» :earth_asia:</h1>
-</div>
+# :earth_africa: pseudo-translate → «pséüdö-třäñsläté» :earth_asia:
 
+A powerful utility to _pseudo-translate_ i18n resources
+  → «Ä pöωéřfül ütïlïty tö _pséüdö-třäñsläté_ ï18ñ řésöüřçés»
 
-Pseudo-translate i18n resources
-
-### Build Status: [![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
+[![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
 
 ## Installation
 
