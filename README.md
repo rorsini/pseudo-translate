@@ -1,6 +1,7 @@
-<center><h1>
-:earth_africa: pseudo-translate → «pséüdö-třäñsläté» :earth_asia:
-</h1></center>
+<div align="center">
+  <h1>:earth_africa: pseudo-translate → «pséüdö-třäñsläté» :earth_asia:</h1>
+</div>
+
 
 Pseudo-translate i18n resources
 
