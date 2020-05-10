@@ -1,6 +1,10 @@
-# :earth_africa: pseudo-translate → «pséüdö-třäñsläté» :earth_asia:
+<center><h1>
+:earth_africa: pseudo-translate → «pséüdö-třäñsläté» :earth_asia:
+</h1></center>
 
 Pseudo-translate i18n resources
+
+### Build Status: [![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
 
 ## Installation
 
@@ -34,8 +38,5 @@ Options include:
 
 * Include Unicode "bookends" by default to identify string concatenation issues.
 
-## Build Status
-
-[![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
 
 
