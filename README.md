@@ -1,14 +1,18 @@
-# :earth_africa: pseudo-translate :earth_asia:
+# pseudo-translate
 
 A powerful utility to _pseudo-translate_ i18n resources
-  → «Ä pöωéřfül ütïlïty tö _pséüdö-třäñsläté_ ï18ñ řésöüřçés»
+> → «Ä pöωéřfül ütïlïty tö _pséüdö-třäñsläté_ ï18ñ řésöüřçés»
 
 [![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
 
 ## Installation
 
-`npm i pseudo-translate`
+First, run:
+```bash
+$ npm i pseudo-translate
+```
 
+Then require, and use like this:
 ```javascript
 const ptify = require('pseudo-translate');
 
@@ -18,14 +22,17 @@ const obj = {
   }
 };
 
-console.log(ptify(obj))
+const pt = ptify(obj);
 
-// outputs:
-// {
-//   USERS: {
-//     MSG: '«Wélçömé {{FNAME}} {{LNAME}}, ñïçé tö séé yöü!»'
-//   }
-// }
+
+/*
+pt contains:
+  {
+    USERS: {
+      MSG: '«Wélçömé {{FNAME}} {{LNAME}}, ñïçé tö séé yöü!»'
+    }
+  }
+*/
 ```
 
 
