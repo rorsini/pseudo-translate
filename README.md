@@ -1,16 +1,40 @@
-# :earth_africa: Pseudo Translatify → «Pséüdö Třäñslätïfy» :earth_asia:
+# :earth_africa: pseudo-translate → «pséüdö-třäñsläté» :earth_asia:
 
-Pseudo-translates a directory of JSON while preserving variable interpolation
+Pseudo-translate i18n resources
 
-## Instalation
+## Installation
+
+`npm i pseudo-translate`
+
+```javascript
+const ptify = require('pseudo-translate');
+
+const obj = {
+  "USERS": {
+    "MSG": "Welcome {{FNAME}} {{LNAME}}, nice to see you!"
+  }
+};
+
+console.log(ptify(obj))
+
+// outputs:
+// {
+//   USERS: {
+//     MSG: '«Wélçömé {{FNAME}} {{LNAME}}, ñïçé tö séé yöü!»'
+//   }
+// }
+```
+
+
+## Configuration Options
 
 Options include:
 
 * Flexible variable interpolation syntax. `"MESSAGE_1": "Hello {{FIRST_NAME}} {{LAST_NAME}}, welcome in!"`
 
-* Include unicode "bookends" by defult to identify string concatentation issues.
+* Include Unicode "bookends" by default to identify string concatenation issues.
 
-## Build status / ci + test coverage
+## Build Status
 
 [![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
 

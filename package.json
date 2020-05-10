@@ -1,20 +1,20 @@
 {
-  "name": "pseudo-translatify-3",
+  "name": "pseudo-translate-1",
   "version": "1.0.0",
-  "description": "Pseudo-translates i18n resources",
+  "description": "Pseudo-translate i18n resources",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rorsini/pseudo-translatify.git"
+    "url": "git+https://github.com/rorsini/pseudo-translate.git"
   },
   "author": "Rob Orsini <rob@tupleshop.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/rorsini/pseudo-translatify/issues"
+    "url": "https://github.com/rorsini/pseudo-translate/issues"
   },
-  "homepage": "https://github.com/rorsini/pseudo-translatify#readme",
-  "main": "dist/pseudo-translatify.cjs.js",
-  "module": "dist/pseudo-translatify.esm.js",
-  "browser": "dist/pseudo-translatify.umd.js",
+  "homepage": "https://github.com/rorsini/pseudo-translate#readme",
+  "main": "dist/pseudo-translate.cjs.js",
+  "module": "dist/pseudo-translate.esm.js",
+  "browser": "dist/pseudo-translate.umd.js",
   "dependencies": {
     "acorn": "^7.1.1",
     "fs": "0.0.1-security",
