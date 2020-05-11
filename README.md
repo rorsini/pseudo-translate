@@ -15,7 +15,7 @@ Use it to:
 * Test that your UI can handle translations of varying length to avoid unintended
   word wrapping or truncation issues.
 * Detect string concatenation issues in your UI before they break real
-  translations. Leave language structure and linguistic declension issue to the
+  translations. Leave language structure and word declension details to the
   translation experts.
 
 Integrate this utility into your development process for quick feedback on
@@ -33,7 +33,11 @@ Then include `ptify` and use by passing in a JSON file path or JSON object
 containing your i18n resource strings to be pseudo-translated:
 ```javascript
 const ptify = require('pseudo-translate');
+```
 
+### Objects
+
+```javascript
 const obj = {
     "USERS": {
         "MSG": "Welcome {{FNAME}} {{LNAME}}, nice to see you!"
@@ -49,11 +53,14 @@ where `pt` contains:
     }
 }
 ```
-You can also pass in the path to your i18n resource JSON file:
+
+### Files
+
+Pseudo-translate an entire file by passing in the path to your i18n resource JSON file:
 ```javascript
 const pt = ptify('./locales/en-US.json');
 ```
-which returns a object who's text values have been pseudo-translated.
+It returns a object who's text values have been pseudo-translated.
 
 ## Configuration
 
