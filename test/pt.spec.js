@@ -64,6 +64,22 @@ describe("Pseudo-Translate JSON:", function() {
         });
     });
 
+    it("takes an option to increase translation length by ~30%", function() {
+        const testData = [
+            { MSG: 'Welcome!' },
+            { MSG: 'Welcome {{ USER }}, please click {{HERE}}' },
+            { MSG: 'One two three four five six seven eight nine ten. One two three four five six seven eight nine ten.' }
+        ];
+        testData.map((enu_obj) => {
+            const options = {
+              increase_lengh_30_pct: true
+            };
+            const pt_obj = ptify(enu_obj, options);
+            const thirtyPctLonger = enu_obj['MSG'].length + Math.floor(enu_obj['MSG'].length/100*30);
+            expect(pt_obj['MSG'].length).to.be.approximately(thirtyPctLonger, 3);
+        })
+    });
+
     it.skip("can translate a directory of JSON files", function() {
         //TODO:  jsonfile.writeFileSync(fileName, content, { spaces: 2 })
     });

@@ -41,9 +41,9 @@ const _randomProperty = (obj) => {
 };
 
 const _increaseLength = (str, options) => {
-    if ( options &&
-         options.increase_lengh_30_pct ) {
-        for (let i=0; i < (str.length/100)*30/2; i++) {
+    if ( options && options.increase_lengh_30_pct ) {
+        const thirtyPct = Math.floor(((str.length)/100)*30/2);
+        for (let i=0; i < thirtyPct; i++) {
             str += ` ${_randomProperty(CHARS)}`;
         }
     }
