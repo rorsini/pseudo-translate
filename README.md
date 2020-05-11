@@ -11,11 +11,16 @@ application will function correctly in another language. So in plain English,
 it's a pretend translation used to test a process before the real translation
 begins.
 
-Also use it to:
-* Test that your UI handles translation of varying width (most tranlsations are ~30% longer then English).
-* Detect string concatenation issues in your UI before they break real translations.
+Use it to:
+* Verify that all UI text has been extracted into i18n resources.
+  Pseudo-translation makes it easy to spot strings you missed, while still
+  being readable to English speaking developers.
+* Test that your UI handles translation of varying width (i.e. no unintended
+  word wrapping or truncations).
+* Detect string concatenation issues in your UI before they break real
+  translations.
 
-Integrate this utility into your development process for quck feedback on
+Integrate this utility into your development process for quick feedback on
 string-extractions while globalizing your software, or for periodic smoke
 testing your localization workflow.
 
