@@ -76,5 +76,7 @@ Options include:
 
 ## Issues
 
-If you have any feature requests or bugs to report please do so here:
+If you have any feature requests or bugs to report please add them here:
 https://github.com/rorsini/pseudo-translate/issues
+
+Thank you!
