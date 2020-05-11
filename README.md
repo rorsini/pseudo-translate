@@ -1,7 +1,7 @@
 # pseudo-translate
 
-A powerful utility to _pseudo-translate_ i18n resources
-> → «Ä pöωéřfül ütïlïty tö _pséüdö-třäñsläté_ ï18ñ řésöüřçés»
+A flexible utility to _pseudo-translate_ i18n resources
+> → «Ä fléxïblé ütïlïty tö _pséüdö-třäñsläté_ ï18ñ řésöüřçés»
 
 
 ## Build status
@@ -10,12 +10,12 @@ A powerful utility to _pseudo-translate_ i18n resources
 
 ## Installation
 
-First, run:
+Install using `npm`:
 ```bash
-$ npm i pseudo-translate
+$ npm -i pseudo-translate
 ```
 
-Then require, and use like this:
+Then include `ptify` and use by passing in a JSON file path or JSON object containing your i18n resource strings to be pseudo-translated:
 ```javascript
 const ptify = require('pseudo-translate');
 
