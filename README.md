@@ -10,12 +10,13 @@ string into another language. It's a **readable**, dummy translation used to tes
 application will function correctly in another language.
 
 Use it to:
-* Verify that all UI text has been extracted into i18n resources:
-  Pseudo-translation makes it easy to spot strings you missed during development.
-* Test that your UI handles translation of varying width (i.e. no unintended
-  word wrapping or truncations).
+* Verify that all UI text has been extracted into i18n resources.
+  Pseudo-translation makes it easy to spot the strings you missed.
+* Test that your UI can handle translations of varying length to avoid unintended
+  word wrapping or truncation issues.
 * Detect string concatenation issues in your UI before they break real
-  translations.
+  translations. Leave language structure and linguistic declension issue to the
+  translation experts.
 
 Integrate this utility into your development process for quick feedback on
 string-extractions while globalizing your software, or for periodic smoke
