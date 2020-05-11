@@ -5,16 +5,13 @@
 A compact and flexible utility for **pseudo-translating** i18n resources.
 > → «Ä çömpäçt äñd fléxïblé ütïlïty föř pséüdö-třäñslätïñg ï18ñ řésöüřçés.»
 
-**Pseudo-translation** is the process of mimicking the process of translating a
-file into another language. It is a dummy translation used to test if an
-application will function correctly in another language. So in plain English,
-it's a pretend translation used to test a process before the real translation
-begins.
+**Pseudo-translation** is the process of mimicking the actual translation of a
+string into another language. It's a **readable**, dummy translation used to test if an
+application will function correctly in another language.
 
 Use it to:
-* Verify that all UI text has been extracted into i18n resources.
-  Pseudo-translation makes it easy to spot strings you missed, while still
-  being readable to English speaking developers.
+* Verify that all UI text has been extracted into i18n resources:
+  Pseudo-translation makes it easy to spot strings you missed during development.
 * Test that your UI handles translation of varying width (i.e. no unintended
   word wrapping or truncations).
 * Detect string concatenation issues in your UI before they break real
@@ -31,7 +28,8 @@ Install using `npm`:
 $ npm -i pseudo-translate
 ```
 
-Then include `ptify` and use by passing in a JSON file path or JSON object containing your i18n resource strings to be pseudo-translated:
+Then include `ptify` and use by passing in a JSON file path or JSON object
+containing your i18n resource strings to be pseudo-translated:
 ```javascript
 const ptify = require('pseudo-translate');
 
