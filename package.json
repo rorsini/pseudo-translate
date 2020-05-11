@@ -12,6 +12,18 @@
     "url": "https://github.com/rorsini/pseudo-translate/issues"
   },
   "homepage": "https://github.com/rorsini/pseudo-translate#readme",
+  "keywords": [
+    "pseudo-translation",
+    "translation",
+    "internationalization",
+    "localization",
+    "globalization",
+    "i18n",
+    "l10n",
+    "gettext",
+    "intl-messageformat",
+    "i18next"
+  ],
   "main": "dist/pseudo-translate.cjs.js",
   "module": "dist/pseudo-translate.esm.js",
   "browser": "dist/pseudo-translate.umd.js",

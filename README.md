@@ -1,12 +1,9 @@
 # pseudo-translate
 
+[![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
+
 A flexible utility to _pseudo-translate_ i18n resources
 > → «Ä fléxïblé ütïlïty tö _pséüdö-třäñsläté_ ï18ñ řésöüřçés»
-
-
-## Build status
-
-[![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
 
 ## Installation
 
@@ -61,4 +58,6 @@ Options include:
 
 ```
 
+## Keywords
 
+[internationalization](https://www.npmjs.com/search?q=keywords:internationalization) [translation](https://www.npmjs.com/search?q=keywords:translation) [localization](https://www.npmjs.com/search?q=keywords:localization) [globalization](https://www.npmjs.com/search?q=keywords:globalization) [i18n](https://www.npmjs.com/search?q=keywords:i18n) [l10n](https://www.npmjs.com/search?q=keywords:l10n) [gettext](https://www.npmjs.com/search?q=keywords:gettext) [intl-messageformat](https://www.npmjs.com/search?q=keywords:intl-messageformat) [i18next](https://www.npmjs.com/search?q=keywords:i18next)
