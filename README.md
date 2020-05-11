@@ -2,14 +2,22 @@
 
 [![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
 
-A compact and flexible utility for pseudo-translating i18n resources.
+A compact and flexible utility for **pseudo-translating** i18n resources.
 > → «Ä çömpäçt äñd fléxïblé ütïlïty föř pséüdö-třäñslätïñg ï18ñ řésöüřçés.»
 
-**Pseudo-translation** is the process of mimicking the process of **translating** a
-file into another language. It is a dummy **translation** used to test if an
+**Pseudo-translation** is the process of mimicking the process of translating a
+file into another language. It is a dummy translation used to test if an
 application will function correctly in another language. So in plain English,
-it's a pretend **translation** used to test a process before the real **translation**
+it's a pretend translation used to test a process before the real translation
 begins.
+
+Also use it to:
+* Test that your UI handles translation of varying width (most tranlsations are ~30% longer then English).
+* Detect string concatenation issues in your UI before they break real translations.
+
+Integrate this utility into your development process for quck feedback on
+string-extractions while globalizing your software, or for periodic smoke
+testing your localization workflow.
 
 ## Installation
 
