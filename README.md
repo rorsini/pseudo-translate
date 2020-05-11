@@ -74,3 +74,7 @@ Options include:
   { "SUBMIT": "Sübmït" }
   ```
 
+## Issues
+
+If you have any feature requests or bugs to report please do so here:
+https://github.com/rorsini/pseudo-translate/issues
