@@ -80,6 +80,18 @@ describe("Pseudo-Translate JSON:", function() {
         })
     });
 
+    it("takes an option to disable adding unicode bookends", function() {
+        const enu_obj = { MSG: 'Welcome {{ USER }}, please click {{HERE}}' };
+        const options = {
+            include_unicode_bookends: false
+        };
+        const pt_obj = ptify(enu_obj, options);
+        console.log(pt_obj);
+        expect(pt_obj).to.deep.equal({
+            MSG: 'Wélçömé {{ USER }}, pléäsé çlïçk {{HERE}}'
+        });
+    });
+
     it.skip("can translate a directory of JSON files", function() {
         //TODO:  jsonfile.writeFileSync(fileName, content, { spaces: 2 })
     });

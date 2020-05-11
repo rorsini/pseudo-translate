@@ -31,8 +31,12 @@ const _processValue = (str) => {
     return newWords.join(' ');
 };
 
-const _wrapSentence = (str) => {
-    return `«${str}»`;
+const _wrapSentence = (str, options) => {
+    if ( options && !options.include_unicode_bookends ) {
+        return str;
+    } else {
+        return `«${str}»`;
+    }
 };
 
 const _randomProperty = (obj) => {
@@ -62,7 +66,8 @@ const ptobj = (obj, options) => {
           _increaseLength(
             _processValue(obj),
             options
-          )
+          ),
+          options
         );
         return val;
     }
