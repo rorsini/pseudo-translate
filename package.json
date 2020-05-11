@@ -1,7 +1,7 @@
 {
-  "name": "pseudo-translate-2",
+  "name": "pseudo-translate",
   "version": "1.0.0",
-  "description": "Pseudo-translate i18n resources",
+  "description": "A compact and flexible utility for pseudo-translating i18n resources.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rorsini/pseudo-translate.git"

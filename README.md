@@ -2,8 +2,15 @@
 
 [![Node.js CI](https://github.com/rorsini/pseudo-translate-json/workflows/Node.js%20CI/badge.svg)](https://github.com/rorsini/pseudo-translate-json/actions?query=workflow%3A%22Node.js+CI%22)
 
-A flexible utility to _pseudo-translate_ i18n resources
-> → «Ä fléxïblé ütïlïty tö _pséüdö-třäñsläté_ ï18ñ řésöüřçés»
+A compact and flexible utility for pseudo-translating i18n resources.
+> → «Ä çömpäçt äñd fléxïblé ütïlïty föř pséüdö-třäñslätïñg ï18ñ řésöüřçés.»
+
+Pseudo-translation is defined as:
+> *Pseudo-translation* is the process of mimicking the process of *translating* a
+> file into another language. It is a dummy *translation* used to test if an
+> application will function correctly in another language. So in plain English,
+> it's a pretend *translation* used to test a process before the real *translation*
+> begins.
 
 ## Installation
 
