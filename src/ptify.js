@@ -32,7 +32,7 @@ const _processValue = (str) => {
 };
 
 const _wrapSentence = (str, options) => {
-    if ( options && !options.include_unicode_bookends ) {
+    if ( options && options.include_unicode_bookends === false ) {
         return str;
     } else {
         return `«${str}»`;
@@ -45,7 +45,7 @@ const _randomProperty = (obj) => {
 };
 
 const _increaseLength = (str, options) => {
-    if ( options && options.increase_lengh_30_pct ) {
+    if ( options && options.increase_lengh_30_pct === true) {
         const thirtyPct = Math.floor(((str.length)/100)*30/2);
         for (let i=0; i < thirtyPct; i++) {
             str += ` ${_randomProperty(CHARS)}`;

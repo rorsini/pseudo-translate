@@ -86,9 +86,15 @@ describe("Pseudo-Translate JSON:", function() {
             include_unicode_bookends: false
         };
         const pt_obj = ptify(enu_obj, options);
-        console.log(pt_obj);
         expect(pt_obj).to.deep.equal({
             MSG: 'Wélçömé {{ USER }}, pléäsé çlïçk {{HERE}}'
+        });
+
+        const empty_options = {
+        };
+        const pt_obj2 = ptify(enu_obj, empty_options);
+        expect(pt_obj2).to.deep.equal({
+            MSG: "«Wélçömé {{ USER }}, pléäsé çlïçk {{HERE}}»"
         });
     });
 
