@@ -53,9 +53,11 @@ which results in `pt` containing:
     }
 }
 ```
-Notice that the string interpolation place-holders `FNAME` and `LNAME` are
-left un-touched so that your i18n extraction library's variable substitutions
-will still work as expected. (See: https://www.i18next.com/translation-function/interpolation)
+Notice that the string interpolation place-holders `FNAME` and `LNAME` are left
+un-touched so that your i18n extraction library's variable substitutions will
+still work as expected. See:
+https://www.i18next.com/translation-function/interpolation for details on the
+default supported syntax.
 
 ### Files
 
