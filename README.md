@@ -45,7 +45,7 @@ Options include:
   variations. To increase the pseudo-translation length by approximately 30%,
   pass in the following `options` object:
   ```javascript
-  const enu_obj = { MSG: 'Welcome {{ USER }}, please click {{HERE}}' }
+  const enu_obj = { MSG: 'Welcome {{ USER }}, please click {{HERE}}' };
   const options = {
       increase_lengh_30_pct: true
   };
@@ -56,24 +56,14 @@ Options include:
   { MSG: '«Wélçömé {{ USER }}, pléäsé çlïçk {{HERE}} ω ä Ý Ä ñ ï»' }
   ```
 
-* Flexible variable interpolation syntax:
+* Unicode "bookends", e.g. `«` and `»`, are included by default to help
+  identify string concatenation issues. For example:
   ```
-  {
-    "MESSAGE_1": "«Héllö {{FIRST_NAME}} {{LAST_NAME}}, ωélçömé ïñ!»"
-  }
+  { "SUBMIT": "«Sübmït»" }
   ```
-
-* Unicode "bookends", e.g. `«` and `»`, are included by default to help identify string concatenation issues:
-  ```
-  {
-      "BUTTON": {
-          "SUBMIT": "«Sübmït»"
-      }
-  }
-  ```
-  To disable bookends, pass in the following option:
+  To *disable* bookends, pass in the following option:
   ```javascript
-  const enu_obj = { MSG: 'Welcome {{ USER }}, please click {{HERE}}' }
+  const enu_obj = { "SUBMIT": "Submit" };
   const options = {
       include_unicode_bookends: false
   };
@@ -81,9 +71,6 @@ Options include:
   ```
   resulting in:
   ```
-  { MSG: 'Wélçömé {{ USER }}, pléäsé çlïçk {{HERE}}' }
+  { "SUBMIT": "Sübmït" }
   ```
 
-### Keywords
-
-[internationalization](https://www.npmjs.com/search?q=keywords:internationalization) [translation](https://www.npmjs.com/search?q=keywords:translation) [localization](https://www.npmjs.com/search?q=keywords:localization) [globalization](https://www.npmjs.com/search?q=keywords:globalization) [i18n](https://www.npmjs.com/search?q=keywords:i18n) [l10n](https://www.npmjs.com/search?q=keywords:l10n) [gettext](https://www.npmjs.com/search?q=keywords:gettext) [intl-messageformat](https://www.npmjs.com/search?q=keywords:intl-messageformat) [i18next](https://www.npmjs.com/search?q=keywords:i18next)
