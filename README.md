@@ -29,14 +29,14 @@ Install using `npm`:
 $ npm -i pseudo-translate
 ```
 
-Then include `ptify` and use by passing in a JSON file path or JSON object
-containing your i18n resource strings to be pseudo-translated:
+Then include `ptify` with:
 ```javascript
 const ptify = require('pseudo-translate');
 ```
 
 ### Objects
 
+Pseudo-translate a JSON object containing your i18n resource strings. Such as:
 ```javascript
 const obj = {
     "USERS": {
@@ -45,7 +45,7 @@ const obj = {
 };
 const pt = ptify(obj);
 ```
-where `pt` contains:
+which results in `pt` containing:
 ```
 {
     "USERS": {
