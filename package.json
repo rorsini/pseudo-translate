@@ -37,7 +37,7 @@
     "@rollup/plugin-node-resolve": "^7.0.0",
     "rollup": "^1.29.0",
     "chai": "^4.2.0",
-    "mocha": "^7.1.2",
+    "mocha": "^10.2.0",
     "nyc": "^15.0.1"
   },
   "scripts": {
